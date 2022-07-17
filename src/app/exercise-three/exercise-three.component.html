@@ -5,15 +5,40 @@
 <div class="gallery">
 
     <div class="featured animate pop" *ngFor="let character of characters">
+
+        <div class="btn-box">
+          <button>
+            <span class="material-icons btn-edit" title="Editar">
+              edit
+            </span>
+          </button>
+        </div>
         
         <div class="image-card">
             <img class="thumbnail" [src]="character.thumbnail">
+            
         </div>
 
         <div class="description-card">
-            <!-- Descripción -->
+            
+            <div>
+                <b>Nombre:</b> 
+                {{character.name}}
+            </div>
+            <div>
+                <b>Descripción:</b>
+                {{character.description}}
+            </div>
+
+            <div class="updated">
+                <div>
+                    Actualizado: {{character.modified | date: 'dd/MM/YYYY'}}
+                </div>
+            </div>
         </div>
         
     </div>
-
+    
 </div>
+
+<ngx-spinner [fullScreen]="false" type="ball-scale-multiple"></ngx-spinner>

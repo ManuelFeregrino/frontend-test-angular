@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable, Subscription } from 'rxjs';
 import { CharactersApiService } from '../core/services/characters-api.service';
 import { DataObsService } from '../core/services/data-obs.service';
@@ -10,10 +11,11 @@ import { DataObsService } from '../core/services/data-obs.service';
 })
 export class ExerciseThreeComponent implements OnInit {
 
-  // allCharacters: Observable<any>;
   characters: any;
 
-  constructor(private dataObsService: DataObsService, private characterService: CharactersApiService) {
+  constructor(private dataObsService: DataObsService,
+              private characterService: CharactersApiService,
+              private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
@@ -25,14 +27,12 @@ export class ExerciseThreeComponent implements OnInit {
   }
 
   getCharacters() {
+    this.spinner.show();
     this.characterService.getAllCharacters().subscribe((data) => {
       console.log(data);
+      this.spinner.hide();
       this.characters = data;
     });
-  }
-
-  ngOnDestroy() {
-    // this.allCharacters.unsubscribe();
   }
 
 }
