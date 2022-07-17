@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+
+// Import library module
+// import { NgxSpinnerModule } from "ngx-spinner";
+
+// interface NgxSpinnerConfig {
+//     type?: string;
+// }
 
 @NgModule({
   declarations: [
@@ -30,8 +37,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatListModule,
     CoreModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    // NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

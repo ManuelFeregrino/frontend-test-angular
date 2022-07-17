@@ -2,3 +2,18 @@
     <img class="return-icon" routerLink="/" src="https://cdn.pixabay.com/photo/2020/03/22/15/19/arrow-4957487_960_720.png" (click)="close()">
 </div>
 
+<div class="gallery">
+
+    <div class="featured animate pop" *ngFor="let character of characters">
+        
+        <div class="image-card">
+            <img class="thumbnail" [src]="character.thumbnail">
+        </div>
+
+        <div class="description-card">
+            <!-- Descripción -->
+        </div>
+        
+    </div>
+
+</div>

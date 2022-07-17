@@ -19,7 +19,7 @@ export class CharactersApiService {
                 return {
                     name: data.name,
                     description: data.description,
-                    thumbnail: data.thumbnail,
+                    thumbnail: `${data.thumbnail.path}.${data.thumbnail.extension}`,
                     modified: data.modified,
                 }
             });

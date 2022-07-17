@@ -13,5 +13,44 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .return-icon:hover {
     background-image: radial-gradient(circle at 120.44% 43.84%, #f9f9f9 0, #ffd783 25%, #f3bb43 50%, #f2af27 75%, #f29904 100%);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.animate {
+    animation-duration: 0.5s;
+    animation-delay: 0.2s;
+    animation-name: animate-fade;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+    animation-fill-mode: both;
+}
+
+/* Fade In */
+.animate.fade {
+    animation-name: animate-fade;
+    animation-timing-function: ease;
+}
+
+@keyframes animate-fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Pop In */
+.animate.pop {
+    animation-name: animate-pop;
+}
+
+@keyframes animate-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}

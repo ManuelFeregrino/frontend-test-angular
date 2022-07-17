@@ -21,7 +21,8 @@ export class NavbarComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private dataObsService: DataObsService) {
+  constructor(private breakpointObserver: BreakpointObserver,
+              private dataObsService: DataObsService) {
     this.subscription = this.dataObsService.getDataObservable.subscribe((value) => {
       this.op = value;
       if (this.op === 1) {

@@ -11,6 +11,7 @@ import { DataObsService } from '../core/services/data-obs.service';
 export class ExerciseThreeComponent implements OnInit {
 
   // allCharacters: Observable<any>;
+  characters: any;
 
   constructor(private dataObsService: DataObsService, private characterService: CharactersApiService) {
   }
@@ -26,6 +27,7 @@ export class ExerciseThreeComponent implements OnInit {
   getCharacters() {
     this.characterService.getAllCharacters().subscribe((data) => {
       console.log(data);
+      this.characters = data;
     });
   }
 
