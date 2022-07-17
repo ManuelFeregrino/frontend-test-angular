@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataObsService } from '../core/services/data-obs.service';
 
 @Component({
   selector: 'app-exercise-two',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExerciseTwoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataObsService: DataObsService) { }
 
   ngOnInit(): void {
+  }
+
+  close() {
+    this.dataObsService.setDataObservable = 0;
   }
 
 }

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { CharactersApiService } from '../core/services/characters-api.service';
+import { DataObsService } from '../core/services/data-obs.service';
 
 @Component({
   selector: 'app-exercise-three',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExerciseThreeComponent implements OnInit {
 
-  constructor() { }
+  // allCharacters: Observable<any>;
+
+  constructor(private dataObsService: DataObsService, private characterService: CharactersApiService) {
+  }
 
   ngOnInit(): void {
+    this.getCharacters();
+  }
+  
+  close() {
+    this.dataObsService.setDataObservable = 0;
+  }
+
+  getCharacters() {
+    this.characterService.getAllCharacters().subscribe((data) => {
+      console.log(data);
+    });
+  }
+
+  ngOnDestroy() {
+    // this.allCharacters.unsubscribe();
   }
 
 }

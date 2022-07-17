@@ -1,4 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.return-icon {
+    width: 32px;
+    border-radius: 25px;
+    position: absolute;
+    margin: 10px 20px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.return-icon:hover {
+    background-image: radial-gradient(circle at 120.44% 43.84%, #f9f9f9 0, #ffd783 25%, #f3bb43 50%, #f2af27 75%, #f29904 100%);
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

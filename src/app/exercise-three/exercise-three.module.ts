@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ExerciseThreeRoutingModule } from './exercise-three-routing.module';
 import { ExerciseThreeComponent } from './exercise-three.component';
 
@@ -11,7 +10,7 @@ import { ExerciseThreeComponent } from './exercise-three.component';
   ],
   imports: [
     CommonModule,
-    ExerciseThreeRoutingModule
+    ExerciseThreeRoutingModule,
   ]
 })
 export class ExerciseThreeModule { }

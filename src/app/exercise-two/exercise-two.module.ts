@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ExerciseTwoRoutingModule } from './exercise-two-routing.module';
 import { ExerciseTwoComponent } from './exercise-two.component';
+import { HeaderModule } from '../header/header.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ExerciseTwoComponent } from './exercise-two.component';
   ],
   imports: [
     CommonModule,
-    ExerciseTwoRoutingModule
+    ExerciseTwoRoutingModule,
+    HeaderModule,
   ]
 })
 export class ExerciseTwoModule { }
