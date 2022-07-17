@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ExerciseThreeRoutingModule } from './exercise-three-routing.module';
 import { ExerciseThreeComponent } from './exercise-three.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { HeaderModule } from '../header/header.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
   imports: [
     CommonModule,
     ExerciseThreeRoutingModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    HeaderModule
   ]
 })
 export class ExerciseThreeModule { }

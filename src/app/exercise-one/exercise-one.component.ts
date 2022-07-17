@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { DataObsService } from '../core/services/data-obs.service';
 
 @Component({
@@ -15,6 +15,19 @@ export class ExerciseOneComponent implements OnInit {
 
   close() {
     this.dataObsService.setDataObservable = 0;
+  }
+
+  @HostListener("window:scroll")
+  onWindowScroll() {
+    console.log('offset');
+  }
+
+  @HostListener('document:mousewheel', ['$event'])
+  onDocumentMousewheelEvent(event:any) {
+
+    const yOffSet = window.pageYOffset;
+    console.log(yOffSet);
+    console.log('yOffSet', yOffSet);
   }
 
 }
