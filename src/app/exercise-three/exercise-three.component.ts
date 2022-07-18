@@ -80,13 +80,10 @@ export class ExerciseThreeComponent implements OnInit {
     if (this.searchValue) {
       this.showBtnClear = true;
       if (this.characters.length > 5) {
-        console.log('1', this.characters);
         this.charactersTemp = this.charactersTemp.concat(this.characters);
         const search = this.characters.filter((item: any) => item.name === this.searchValue);
         this.characters = search ? search : this.characters;
     } else {
-        console.log('2', this.characters);
-        console.log('2', this.charactersTemp);
         let search = '';
         if (this.characters.length === 0) {
           search = this.charactersTemp.filter((item: any) => item.name === this.searchValue);

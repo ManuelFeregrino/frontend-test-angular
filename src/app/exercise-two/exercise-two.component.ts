@@ -52,7 +52,6 @@ export class ExerciseTwoComponent implements OnInit {
       jsonData: JSON.parse(this.json),
     };
     this.nodeService.getLocalityWithMoreServicesWithParams(dataServices).subscribe((data: any) => {
-      console.log('getLocalityWithMoreServicesWithParams', data);
       this.locality = data.locality;
     });
   }
@@ -63,7 +62,6 @@ export class ExerciseTwoComponent implements OnInit {
       jsonData: JSON.parse(this.json),
     };
     this.nodeService.getServiceWithGreaterCoverageWithParams(dataServices).subscribe((data: any) => {
-      console.log('getServiceWithGreaterCoverage', data);
       this.carrier = data.carrier;
       this.service = data.service;
     });

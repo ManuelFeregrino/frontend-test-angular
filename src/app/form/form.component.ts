@@ -57,7 +57,6 @@ export class FormComponent implements OnInit {
   }
 
   doAction() {
-    console.log();
     this.dialogRef.close({event: 'Save', data: this.characterForm.value});
   }
 
