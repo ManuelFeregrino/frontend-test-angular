@@ -14,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     CoreModule.forRoot(),
     HttpClientModule,
     NgxSpinnerModule,
+    FormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

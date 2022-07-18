@@ -4,6 +4,8 @@ import { ExerciseThreeRoutingModule } from './exercise-three-routing.module';
 import { ExerciseThreeComponent } from './exercise-three.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { HeaderModule } from '../header/header.module';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { HeaderModule } from '../header/header.module';
     CommonModule,
     ExerciseThreeRoutingModule,
     NgxSpinnerModule,
-    HeaderModule
+    HeaderModule,
+    InfiniteScrollModule,
+    FormsModule
   ]
 })
 export class ExerciseThreeModule { }

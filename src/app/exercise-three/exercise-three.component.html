@@ -3,7 +3,21 @@
     <img class="return-icon" routerLink="/" src="https://cdn.pixabay.com/photo/2020/03/22/15/19/arrow-4957487_960_720.png" (click)="close()">
 </div>
 
-<div class="gallery">
+<div class="box-input">
+  <div class="btn-clear" *ngIf="showBtnClear">
+    <div (click)="getCharacters()">Limpiar</div>
+  </div>
+  <input class="search-input" type="text" placeholder="Buscar..." [(ngModel)]="searchValue" (keyup.enter)="search()">
+  <div class="box-btn-search">
+    <span class="material-icons btn-edit" title="Buscar" (click)="search()"> search </span>
+  </div>
+</div>
+
+<div class="gallery"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()">
 
     <div class="featured animate pop" *ngFor="let character of characters">
 
@@ -17,11 +31,9 @@
         
         <div class="image-card">
             <img class="thumbnail" [src]="character.thumbnail">
-            
         </div>
 
         <div class="description-card">
-            
             <div>
                 <b>Nombre:</b> 
                 {{character.name}}
@@ -43,7 +55,7 @@
 </div>
 
 <button class="box-btn-top" *ngIf="showButtonTop" (click)="onScrollTop()">
-  <span class="material-icons btn-top" title="Editar">arrow_upward</span>
+  <span class="material-icons btn-top" title="Inicio">arrow_upward</span>
 </button>
 
 <ngx-spinner [fullScreen]="false" type="ball-scale-multiple"></ngx-spinner>

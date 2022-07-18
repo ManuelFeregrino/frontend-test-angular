@@ -17,6 +17,35 @@ export class CharactersApiService {
         return this.http.get<any>(this.URL_API).pipe(map((data: any) => {
             return data.data.results.map((data: any) => {
                 return {
+                    id: data.id,
+                    name: data.name,
+                    description: data.description,
+                    thumbnail: `${data.thumbnail.path}.${data.thumbnail.extension}`,
+                    modified: data.modified,
+                }
+            });
+        }));
+    }
+
+    getCharactersByPage(limit:number = 30, offset: number = 0) {
+        return this.http.get<any>(`${this.URL_API}&limit=${limit}&offset=${offset}`).pipe(map((data: any) => {
+            return data.data.results.map((data: any) => {
+                return {
+                    id: data.id,
+                    name: data.name,
+                    description: data.description,
+                    thumbnail: `${data.thumbnail.path}.${data.thumbnail.extension}`,
+                    modified: data.modified,
+                }
+            });
+        }));
+    }
+
+    getCharactersByName(name: string) {
+        return this.http.get<any>(`${this.URL_API}&name=${name}`).pipe(map((data: any) => {
+            return data.data.results.map((data: any) => {
+                return {
+                    id: data.id,
                     name: data.name,
                     description: data.description,
                     thumbnail: `${data.thumbnail.path}.${data.thumbnail.extension}`,

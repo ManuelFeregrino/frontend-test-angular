@@ -15,6 +15,10 @@ export class ExerciseThreeComponent implements OnInit {
   characters: any;
   showButtonTop: boolean = false;
   private scrollHeight = 500;
+  limit: number = 30;
+  offset: number = 0;
+  searchValue: string = '';
+  showBtnClear: boolean = false;
 
   constructor(private dataObsService: DataObsService,
               private characterService: CharactersApiService,
@@ -31,9 +35,9 @@ export class ExerciseThreeComponent implements OnInit {
   }
 
   getCharacters() {
+    this.showBtnClear = false;
     this.spinner.show();
-    this.characterService.getAllCharacters().subscribe((data) => {
-      console.log(data);
+    this.characterService.getCharactersByPage(this.limit, this.offset).subscribe((data) => {
       this.spinner.hide();
       this.characters = data;
     });
@@ -43,13 +47,30 @@ export class ExerciseThreeComponent implements OnInit {
     this.document.documentElement.scrollTop = 0;
   }
 
+  onScroll() {
+    this.offset = this.offset + this.limit;
+    this.characterService.getCharactersByPage(this.limit, this.offset).subscribe((data) => {
+      Array.prototype.push.apply(this.characters, data);
+    });
+  }
+
+  search() {
+    if (this.searchValue) {
+      this.showBtnClear = true;
+      this.characterService.getCharactersByName(this.searchValue).subscribe((data) => {
+        this.characters = data;
+      });
+    } else {
+      this.getCharacters();
+    }
+    
+  }
+
   @HostListener("window:scroll")
   onWindowScroll() {
     const yOffSet = window.pageYOffset;
     const scrollTop = this.document.documentElement.scrollTop;
-
     this.showButtonTop = (yOffSet || scrollTop) > this.scrollHeight;
-
   }
 
 }

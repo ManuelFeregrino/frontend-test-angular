@@ -1,7 +1,7 @@
 .gallery {
     display: grid;
     gap: 2rem;
-    padding: 45px;
+    padding: 23px 45px;
     grid-auto-flow: 22rem;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     overflow: scroll;
@@ -84,6 +84,9 @@
     padding-top: 3px;
     border: none;
     opacity: 0.5;
+    cursor: pointer;
+    color: white;
+    background-image: radial-gradient(circle at 120.44% 43.84%, #f9f9f9 0, #ffd783 25%, #f3bb43 50%, #f2af27 75%, #f29904 100%);
     
     .btn-top {
         font-size: 19px;
@@ -95,5 +98,40 @@
     background-image: radial-gradient(circle at 120.44% 43.84%, #f9f9f9 0, #ffd783 25%, #f3bb43 50%, #f2af27 75%, #f29904 100%);
     color: white;
     opacity: 1;
+}
+
+.box-input {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    padding: 15px 0px;
+}
+
+.box-btn-search {
+    background-image: radial-gradient(circle at 120.44% 43.84%, #f9f9f9 0, #ffd783 25%, #f3bb43 50%, #f2af27 75%, #f29904 100%);
+    width: 30px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    color: white;
+}
+
+.search-input {
+    width: 150px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid gray;
+    padding-left: 15px;
+}
+
+.btn-clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    color: gray;
+    font-size: 12px;
+    cursor: pointer;
 }
     
