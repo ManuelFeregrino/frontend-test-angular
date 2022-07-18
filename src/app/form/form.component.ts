@@ -75,7 +75,13 @@ export class FormComponent implements OnInit {
         modified: new Date
       });
     }
-    
+
+    if (this.characterForm.value.thumbnail === '') {
+        this.characterForm.patchValue({
+            thumbnail: 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
+        });
+    }
+
     this.doAction();
   }
 
