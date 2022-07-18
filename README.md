@@ -5,6 +5,7 @@ https://github.com/ManuelFeregrino/apirest-test-node
 
 * Visualización de números primos
 * Localidades y servicios
+*   * Hola
 * Interfaz web responsiva de los personajes de Marvel 
 
 Es necesarío que antes de navegar por la aplicación primero se levante el servidor, ya sea con el comando `npm start` ó bien, construyendo la imagen del docker con el comando `docker build -t node-restapi .`, seguido de `docker run -d -p 3000:3000 node-restapi`, ya que el ejercicio 1 y 2 necesitan del API para poder recuperar la información, de lo contrario solo podra navegar dentro del ejercicio 3.
