@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ExerciseOneRoutingModule } from './exercise-one-routing.module';
 import { ExerciseOneComponent } from './exercise-one.component';
 import { HeaderModule } from '../header/header.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HeaderModule } from '../header/header.module';
   imports: [
     CommonModule,
     ExerciseOneRoutingModule,
-    HeaderModule
+    HeaderModule,
+    FormsModule,
   ]
 })
 export class ExerciseOneModule { }

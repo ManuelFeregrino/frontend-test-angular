@@ -3,10 +3,22 @@
     <img class="return-icon" routerLink="/" src="https://cdn.pixabay.com/photo/2020/03/22/15/19/arrow-4957487_960_720.png" (click)="close()">
 </div>
 
-<div *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+<div class="box-input" >
 
-    <div class="text-card">
-        Hola
+    <input class="startNumber-input" type="number" placeholder="Numero inicial..." [(ngModel)]="startNumber" (keyup.enter)="calculate()">
+    <input class="endNumber-input" type="number" placeholder="Numero final..." [(ngModel)]="endNumber" (keyup.enter)="calculate()">
+    <div class="box-btn-search">
+      <span class="material-icons btn-edit" title="Buscar" (click)="calculate()"> search </span>
     </div>
-
 </div>
+
+<div class="gallery">
+    <div class="featured animate pop" *ngFor="let number of primeNumbers">
+
+        <div class="card-number">
+            {{number}}
+        </div>
+    
+    </div>
+</div>
+

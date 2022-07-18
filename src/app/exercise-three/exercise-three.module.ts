@@ -6,6 +6,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { HeaderModule } from '../header/header.module';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormModule } from '../form/form.module';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     NgxSpinnerModule,
     HeaderModule,
     InfiniteScrollModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    FormModule
   ]
 })
 export class ExerciseThreeModule { }

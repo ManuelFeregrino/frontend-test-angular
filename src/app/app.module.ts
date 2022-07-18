@@ -35,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     CoreModule.forRoot(),
     HttpClientModule,
     NgxSpinnerModule,
-    FormsModule
+    FormsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

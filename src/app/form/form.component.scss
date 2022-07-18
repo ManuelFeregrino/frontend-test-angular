@@ -1,0 +1,55 @@
+.margin-form {
+    position: relative;
+    margin: 20px 10px 70px 10px;
+}
+
+.invalid {
+    border-bottom-color: #dc3545;
+}
+
+.box-title-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mbi {
+    margin-bottom: 20px;
+}
+
+.box-btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    bottom: -60px;
+}
+
+.btn-cancel {
+    height: 30px;
+    border: none;
+    width: 82px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.btn-cancel:hover {
+    color: white;
+    background-color: #dc3545;
+}
+
+.btn-save {
+    color: white;
+    height: 30px;
+    border: none;
+    width: 82px;
+    border-radius: 5px;
+    margin-right: 20px;
+    background-image: radial-gradient(circle at 120.44% 43.84%, #f9f9f9 0, #ffd783 25%, #f3bb43 50%, #f2af27 75%, #f29904 100%);
+}
+
+.title-modal {
+    font-size: 17px;
+    font-weight: 400;
+}

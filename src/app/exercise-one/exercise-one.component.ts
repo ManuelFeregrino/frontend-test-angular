@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { DataObsService } from '../core/services/data-obs.service';
+import { NodeApiService } from '../core/services/node-api.service';
 
 @Component({
   selector: 'app-exercise-one',
@@ -8,26 +9,34 @@ import { DataObsService } from '../core/services/data-obs.service';
 })
 export class ExerciseOneComponent implements OnInit {
 
-  constructor(private dataObsService: DataObsService) { }
+  primeNumbers: any = [];
+  startNumber: number = 1;
+  endNumber: number = 10;
+  range: any = {
+    "startNumber":1,
+    "endNumber": 10
+  };
+
+  constructor(private dataObsService: DataObsService, private nodeService: NodeApiService) { }
 
   ngOnInit(): void {
+    this.nodeService.calculatePrimeNumbers(this.range).subscribe((data: any) => {
+      this.primeNumbers = data.body;
+    });
   }
 
   close() {
     this.dataObsService.setDataObservable = 0;
   }
 
-  @HostListener("window:scroll")
-  onWindowScroll() {
-    console.log('offset');
-  }
-
-  @HostListener('document:mousewheel', ['$event'])
-  onDocumentMousewheelEvent(event:any) {
-
-    const yOffSet = window.pageYOffset;
-    console.log(yOffSet);
-    console.log('yOffSet', yOffSet);
+  calculate() {
+    const rage = {
+      startNumber: this.startNumber,
+      endNumber: this.endNumber
+    }
+    this.nodeService.calculatePrimeNumbers(rage).subscribe((data: any) => {
+      this.primeNumbers = data.body;
+    });
   }
 
 }

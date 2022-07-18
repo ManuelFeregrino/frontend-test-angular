@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataObsService } from './services/data-obs.service';
-
+import { NodeApiService } from './services/node-api.service';
 
 
 @NgModule({
@@ -10,7 +10,8 @@ import { DataObsService } from './services/data-obs.service';
     CommonModule
   ],
   providers: [
-    DataObsService
+    DataObsService,
+    NodeApiService
   ]
 })
 export class CoreModule {

@@ -3,17 +3,23 @@
     <img class="return-icon" routerLink="/" src="https://cdn.pixabay.com/photo/2020/03/22/15/19/arrow-4957487_960_720.png" (click)="close()">
 </div>
 
-<div class="box-input">
+<div class="box-input" >
   <div class="btn-clear" *ngIf="showBtnClear">
-    <div (click)="getCharacters()">Limpiar</div>
+    <div (click)="clear()">Limpiar</div>
   </div>
   <input class="search-input" type="text" placeholder="Buscar..." [(ngModel)]="searchValue" (keyup.enter)="search()">
   <div class="box-btn-search">
     <span class="material-icons btn-edit" title="Buscar" (click)="search()"> search </span>
   </div>
+
+  <div class="box-nuevo" (click)="new()">
+    Nuevo
+  </div>
 </div>
 
-<div class="gallery"
+
+
+<div class="gallery" *ngIf="characters && characters.length > 0"
       infiniteScroll
       [infiniteScrollDistance]="2"
       [infiniteScrollThrottle]="50"
@@ -22,7 +28,7 @@
     <div class="featured animate pop" *ngFor="let character of characters">
 
         <div class="btn-box">
-          <button>
+          <button (click)="edit(character)">
             <span class="material-icons btn-edit" title="Editar">
               edit
             </span>
