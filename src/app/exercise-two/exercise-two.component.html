@@ -2,3 +2,74 @@
 <div>
     <img class="return-icon" routerLink="/" src="https://cdn.pixabay.com/photo/2020/03/22/15/19/arrow-4957487_960_720.png" (click)="close()">
 </div>
+
+<div class="space-header">
+    <button class="btn-get" (click)="leadData()">Obtener</button>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-6 box-column-one">
+
+        <div class="box-title-one">
+            <div>
+                Servicios para cada localidad con mayor limite.
+            </div>
+            <div class="sub-title">
+                Puede cambiar el valor de algúna propiedad de values y json.
+            </div>
+        </div>
+
+        <div class="box-elements">
+
+            <div class="box-text-area">
+                <div>values:</div>
+                <textarea class="form-control text-code" [(ngModel)]="values">{{values}}</textarea>
+            </div>
+
+            <div class="box-text-area">
+                <div>json:</div>
+                <textarea class="form-control text-code" [(ngModel)]="json">{{json}}</textarea>
+            </div>
+
+            <div class="box-text-area">
+                <div>Resultado:</div>
+                <textarea class="form-control text-code">{{servicesHigherLimit}}</textarea>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-6 box-column">
+
+        <div class="box-title-one">
+            <div>
+                Las propiedades que cambien de values y json
+            </div>
+            <div>
+                tambien afectarán estos resultados.
+            </div>
+       
+        </div>
+
+        <div class="row margin-b">
+            <div class="card-secundary">
+                <h4>La localidad con mayor cantidad de servicios disponibles</h4>
+                
+                <label class="form-label"> Localidad:</label>
+                <input class="form-control" type="text" [(ngModel)]="locality" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-secundary">
+                <h4>El servicio con mayor cobertura (Usado en más localidades)</h4>
+                <label class="form-label"> Transportador:</label>
+                <input class="form-control" type="text" [(ngModel)]="carrier" disabled>
+                <label class="form-label"> Servicio:</label>
+                <input class="form-control" type="text" [(ngModel)]="service" disabled>
+            </div>
+        </div>
+    </div>
+
+</div>

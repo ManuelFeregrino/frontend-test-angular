@@ -124,6 +124,7 @@ export class ExerciseThreeComponent implements OnInit {
     this.searchValue = '';
     if (this.charactersTemp && this.charactersTemp.length > 5) {
       this.characters = this.charactersTemp;
+      this.charactersTemp = [];
     } else {
       this.getCharacters();
     }

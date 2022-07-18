@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(private dataObsService: DataObsService) {
         this.subscription = this.dataObsService.getDataObservable.subscribe((value) => {
-            console.log('value', value);
           this.op = value;
           if (this.op === 1) {
             this.title = 'Números primarios';

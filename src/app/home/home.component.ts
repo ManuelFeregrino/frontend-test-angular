@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   }
 
   selectOption(op: number) {
-
     if (op === 1) {
       this.dataObsService.setDataObservable = 1;
     } else if (op === 2) {
@@ -23,7 +22,6 @@ export class HomeComponent implements OnInit {
     } else if (op === 3) {
       this.dataObsService.setDataObservable = 3;
     }
-
   }
 
 }
