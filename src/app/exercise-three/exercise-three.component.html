@@ -7,7 +7,7 @@
   <div class="btn-clear" *ngIf="showBtnClear">
     <div (click)="clear()">Limpiar</div>
   </div>
-  <input class="search-input" type="text" placeholder="Buscar..." [(ngModel)]="searchValue" (keyup.enter)="search()">
+  <input class="search-input form-control" type="text" placeholder="Buscar..." [(ngModel)]="searchValue" (keyup.enter)="search()">
   <div class="box-btn-search">
     <span class="material-icons btn-edit" title="Buscar" (click)="search()"> search </span>
   </div>

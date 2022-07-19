@@ -11,25 +11,25 @@ export class NodeApiService {
     constructor(private http: HttpClient) {}
 
     calculatePrimeNumbers(range: any): Observable<any> {
-        return this.http.post('http://localhost:3000/primeNumbers', range).pipe(map((data: any) => {
+        return this.http.post('http://localhost:3000/prime-numbers', range).pipe(map((data: any) => {
             return data;
         }));
     }
 
     getServicesHigherLimit(): Observable<any> {
-        return this.http.get('http://localhost:3000/servicesHigherLimit').pipe(map((data: any) => {
+        return this.http.get('http://localhost:3000/services-higher-limit').pipe(map((data: any) => {
             return data;
         }));
     }
 
     localityWithMoreServices(): Observable<any> {
-        return this.http.get('http://localhost:3000/localityWithMoreServices').pipe(map((data: any) => {
+        return this.http.get('http://localhost:3000/locality-with-more-services').pipe(map((data: any) => {
             return data;
         }));
     }
 
     getServiceWithGreaterCoverage(): Observable<any> {
-        return this.http.get('http://localhost:3000/serviceWithGreaterCoverage').pipe(map((data: any) => {
+        return this.http.get('http://localhost:3000/service-with-greater-coverage').pipe(map((data: any) => {
             return data;
         }));
     }
@@ -37,19 +37,19 @@ export class NodeApiService {
     // ------
 
     getServicesWithHigherLimitWithParams(data: any): Observable<any> {
-        return this.http.post('http://localhost:3000/servicesWithHigherLimitWithParams', data).pipe(map((data: any) => {
+        return this.http.post('http://localhost:3000/services-with-higher-limit-with-params', data).pipe(map((data: any) => {
             return data;
         }));
     }
 
     getLocalityWithMoreServicesWithParams(data: any): Observable<any> {
-        return this.http.post('http://localhost:3000/localityWithMoreServicesWithParams', data).pipe(map((data: any) => {
+        return this.http.post('http://localhost:3000/locality-with-more-services-with-params', data).pipe(map((data: any) => {
             return data;
         }));
     }
 
     getServiceWithGreaterCoverageWithParams(data: any): Observable<any> {
-        return this.http.post('http://localhost:3000/serviceWithGreaterCoverageWithParams', data).pipe(map((data: any) => {
+        return this.http.post('http://localhost:3000/service-with-greater-coverage-with-params', data).pipe(map((data: any) => {
             return data;
         }));
     }

@@ -23,7 +23,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .card-secundary {
@@ -53,12 +52,15 @@
 }
 
 .text-code {
-    height: 500px;
+    height: 205px;
 }
 
 .box-elements {
     display: flex;
     justify-content: space-around;
+
+    flex-direction: column;
+    padding: 0 30px;
 }
 
 .btn-get {
@@ -71,17 +73,6 @@
     height: 30px;
 }
 
-@media only screen and (max-width: 650px) {
-    .box-elements {
-        flex-direction: column;
-        padding: 30px;
-    }
-
-    .text-code {
-        height: 405px;
-    }
-
-    .box-text-area {
-        padding-bottom: 20px;
-    }
-  }
+.box-text-area {
+    padding-bottom: 20px;
+}

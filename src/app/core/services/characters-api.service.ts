@@ -30,13 +30,24 @@ export class CharactersApiService {
     getCharactersByPage(limit:number = 30, offset: number = 0) {
         return this.http.get<any>(`${this.URL_API}&limit=${limit}&offset=${offset}`).pipe(map((data: any) => {
             return data.data.results.map((data: any) => {
-                return {
-                    id: data.id,
-                    name: data.name,
-                    description: data.description,
-                    thumbnail: `${data.thumbnail.path}.${data.thumbnail.extension}`,
-                    modified: data.modified,
+                if (data && data.id && data.modified) {
+                    return {
+                        id: data.id,
+                        name: data.name,
+                        description: data.description,
+                        thumbnail: `${data.thumbnail.path}.${data.thumbnail.extension}`,
+                        modified: data.modified,
+                    }
+                } else {
+                    return {
+                        id: '',
+                        name: '',
+                        description: '',
+                        thumbnail: 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg',
+                        modified: new Date(),
+                    }
                 }
+                
             });
         }));
     }

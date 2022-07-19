@@ -5,8 +5,8 @@
 
 <div class="box-input" >
 
-    <input class="startNumber-input" type="number" placeholder="Numero inicial..." [(ngModel)]="startNumber" (keyup.enter)="calculate()">
-    <input class="endNumber-input" type="number" placeholder="Numero final..." [(ngModel)]="endNumber" (keyup.enter)="calculate()">
+    <input class="startNumber-input form-control" type="number" placeholder="Numero inicial..." [(ngModel)]="startNumber" (keyup.enter)="calculate()">
+    <input class="endNumber-input form-control" type="number" placeholder="Numero final..." [(ngModel)]="endNumber" (keyup.enter)="calculate()">
     <div class="box-btn-search">
       <span class="material-icons btn-edit" title="Buscar" (click)="calculate()"> search </span>
     </div>
