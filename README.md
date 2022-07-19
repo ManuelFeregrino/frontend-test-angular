@@ -23,12 +23,12 @@ Es necesarío que antes de navegar por la aplicación primero se levante el serv
 1. Descargar el repositorio del API https://github.com/ManuelFeregrino/apirest-test-node
 
 2. Levantar el API
-* 1 Mediante la terminal posicionarse dentro de la carpeta del proyecto (restapi-node).
-* 2 Construir la imagen: `docker build -t node-restapi .`
-* 3 Correr el docker: `docker run -d -p 3000:3000 node-restapi`
+  * 1 Mediante la terminal posicionarse dentro de la carpeta del proyecto (restapi-node).
+  * 2 Construir la imagen: `docker build -t node-restapi .`
+  * 3 Correr el docker: `docker run -d -p 3000:3000 node-restapi`
 
 3. Levantar el servidor web
-* 1 Mediante la terminal posicionarse dentro de la carpeta del proyecto (frontend-test-angular).
-* 2 Instalar los modulos de node: `npm install`
-* 3 Correr: `ng serve` ó `ng serve --open`
-* 4 Encaso de usar `ng serve` navegar a `http://localhost:4200/`
+  * 1 Mediante la terminal posicionarse dentro de la carpeta del proyecto (frontend-test-angular).
+  * 2 Instalar los modulos de node: `npm install`
+  * 3 Correr: `ng serve` ó `ng serve --open`
+  * 4 Encaso de usar `ng serve` navegar a `http://localhost:4200/`
