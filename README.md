@@ -26,6 +26,11 @@ Es necesarío que antes de navegar por la aplicación primero se levante el serv
   * 1 Mediante la terminal posicionarse dentro de la carpeta del proyecto (restapi-node).
   * 2 Construir la imagen: `docker build -t node-restapi .`
   * 3 Correr el docker: `docker run -d -p 3000:3000 node-restapi`
+  
+ En caso de no utilizar Docker
+  * 1 Mediante la terminal posicionarse dentro de la carpeta del proyecto (restapi-node).
+  * 2 Instalar los modulos de node: `npm install`
+  * 3 Correr el comando: `npm start`
 
 3. Levantar el servidor web
   * 1 Mediante la terminal posicionarse dentro de la carpeta del proyecto (frontend-test-angular).
