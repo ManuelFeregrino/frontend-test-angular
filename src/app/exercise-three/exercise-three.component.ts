@@ -128,6 +128,7 @@ export class ExerciseThreeComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((saved:any) => {
+      if (saved.event && saved.event === 'Cancel') return;
       this.characters.unshift(saved.data);
     });
   }
